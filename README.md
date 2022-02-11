@@ -19,6 +19,7 @@ An example can be found [here](https://drive.google.com/file/d/1PDTA5BO6plvqe-ek
 3. Go to the API console linked in at the end of the setup. Go to the credentials tab, then manage service accounts, then create service account. You don't need to modify any of the options but it's good to fill out the description.
 4. After creating, click the 3 dots for actions and Create Key. Use JSON. This will download a json token to your computer.
 5. Copy the json token to the directory where you have cloned this repo, and name it "service.json". Make sure to note the email address of the service account somewhere.
+6. Open `service.json` and find the `client_email` field, give that email editor access to the google drive folders that you plan to store your watermarked materials to. 
 
 You should now be setup to run the script.
 
