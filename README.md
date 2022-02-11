@@ -1,5 +1,7 @@
 # Watermark PDFs and Upload to Drive
 
+The repo is forked from Yanay Rosen's watermark repo. 
+
 This script let's you share watermarked versions of pdfs on google drive.
 
 The watermark for each user will be their email, it is tiled in the background.
