@@ -119,7 +119,7 @@ def watermark_and_upload(email, file):
 
 
 
-def process(email_column="email"):
+def process(email_column="Email Address"):
     """Process each email in the email column of the roster"""
     if ROSTER != None:
         r = pd.read_csv(ROSTER, header=0)
@@ -128,10 +128,23 @@ def process(email_column="email"):
         emails = [EMAIl]
     i = 0
     for email in emails:
-        watermark_and_upload(email, FILE)
+        try:
+            watermark_and_upload(email, FILE)
+        except Exception as e:
+            print(type(e))
+            print(e.args)
+            print(e)
+            print('---FAIL TO UPLOAD FOR---')
+            print(email)
+            print('---CONTINUE---')
         i += 1
-        if i % 5 == 0:
+        if i % 10 == 0:
             print(f"{i} finished uploading and sharing")
+
+    #force share with these people
+    force_share = ['laebah@berkeley.edu']
+    for force in force_share:
+        watermark_and_upload(force, FILE)
 
 
 if __name__ == '__main__':
